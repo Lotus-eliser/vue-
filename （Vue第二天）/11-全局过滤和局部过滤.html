@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <div>{{ msg | global |  demon  }}</div>
+        </div>
+        <div id='app1'>{{ msg | global |  demon}}</div>
+
+        <script src="./vue.js"></script>
+        <script>
+            /* 
+            全局过滤器： 在任何的vue实例中，都可以使用（作用范围广）
+            局部过滤器： 只能在当前vue实例中， 使用
+
+            tips: 将来会学习组件， 一个页面由一个个组件构成  ，而组件也是vue 实例
+            在任何的vue实例中 => 全局过滤器，是在任何组件中， 都可以通用的过滤器
+            */
+
+            //全局过滤器
+            Vue.filter('global',function(value){
+                return  value + '--global'
+            })
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    msg: 'hello vue'
+                },
+                //局部过滤
+                filters:{
+                    //过滤名 ：处理函数
+                    demon:function (value){
+                        return value + '--demon'
+                    }
+                }
+            })
+
+            const vm2 =new  Vue({
+                el:'#app1',
+                data:{
+                    msg:'小李'
+                }
+            })
+        </script>
+    </body>
+</html>

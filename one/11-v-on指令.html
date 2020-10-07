@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            {{ msg }}
+        </div>
+        <!-- 
+            v-on 用于注册事件
+            1、内联语句：
+            v-on: 事件名 = "要执行的代码"  // 好吃： 简洁简单  适用于特别 简单的代码
+
+            2、指定的methods  中的函数
+            v-on: 事件名 = "methods中的函数"
+
+            3、指定的methods中的函数 ，并且传参
+            v-on: 事件名 = "methods中的函数（参数1，参数2）"
+
+            简写： v-on  可以简写@
+            v-on  =》 @事件名
+            
+            小结：
+            -------------------------------------------------
+            1、@事件名 = '要执行的代码'   推荐简单代码
+            2、@事件名 = 'methods中的函数'
+            2、@事件名 = 'methods中的函数（参数1、参数2，....）'
+            3、
+
+         -->
+        <script src="./vue.js"></script>
+        <script>
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    msg: 'hello vue'
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        插值表达式 ： {{ }} 小胡子语法
+        作用： 使用data 中的数据， 渲染视图
+        
+        语法：
+        {{ house }}
+        {{ obj.name }}
+        {{ msg.toUpperCase() }}   
+        支持三元运算符，    ？ ：
+
+        注意点：
+        1、不是data  中的变量不要直接用
+        2、在插值表达式{{ }}中， 不能使用js 语句  
+        3、不能在 html  标签中， 使用差值表达式
+     -->
+     <div id='app'>
+         {{msg}}
+         <br>
+         {{obj.name}}
+     </div>
+     <script src="./node_modules/vue/dist/vue.js"></script>
+     <script>
+         const vm = new Vue({
+             el:"#app",
+             data:{
+                 msg: 'hello, vue',
+                 obj:{
+                    name:'小李',
+                    dsc:'攒着是因为想写成歌'
+                 }
+             }
+         }) 
+     </script>
+</body>
+</html>

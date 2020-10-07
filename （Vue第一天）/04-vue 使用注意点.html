@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
+        <div id='box'>
+            <h1>{{count}}</h1>
+        </div>
+
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '杨宗纬',
+                count: 100
+            }
+        })
+
+        //vue 实例化的过程中  将data中的所有的数据 ， 都会添加到 vm 实例上
+        console.log(vm.count);
+        console.log(vm.msg);
+
+        /*
+        1、  Vue 是构造函数首字母大写
+        2、  el 不能指定成 body  或者 html
+        3、  到了vue ， 记得数据驱动业务， 要更新试图，请操作数据   该掉jq 中固有的操作dom 思想
+         */
+    </script>
+</body>
+
+</html>
